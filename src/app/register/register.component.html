@@ -1,14 +1,18 @@
-<form #form="">
+<form #form="ngForm" (ngSubmit)="onRegister(form)">
   <fieldset>
-  <label>User Name</label>
-  <input type="text">
-</fieldset>
-<fieldset>
-  <label for="">Email</label>
-  <input type="text">
-</fieldset>
-<fieldset>
-  <label for="">Password</label>
-  <input type="text">
-</fieldset>
+    <label>User Name:</label>
+    <input type="text" />
+  </fieldset>
+  <fieldset>
+    <label>Email:</label>
+    <input type="text" />
+  </fieldset>
+  <fieldset>
+    <label for="">Password:</label>
+    <input type="text" />
+  </fieldset>
+  <br>
+  <div class="btn">
+  <button type="submit">Register</button>
+</div>
 </form>

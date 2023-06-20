@@ -3,3 +3,7 @@
   display: flex;
   justify-content: flex-end;
 }
+a {
+  padding: 25px;
+  margin-right: 25px;
+}

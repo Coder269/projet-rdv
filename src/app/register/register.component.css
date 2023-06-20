@@ -1,0 +1,14 @@
+fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.btn {
+  text-align: center;
+}
+
+fieldset label {
+
+  margin-bottom: 10px;
+}
