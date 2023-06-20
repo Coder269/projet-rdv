@@ -1,0 +1,14 @@
+<div class="calendar" *ngIf="calendar.display == 'mounth'">
+  <div class="daysLabel">
+    <span>Lundi</span>
+    <span>Mardi</span>
+    <span>Mercredi</span>
+    <span>Jeudi</span>
+    <span>Vendredi</span>
+    <span>Samedi</span>
+    <span>Dimanche</span>
+  </div>
+  <div class="week" *ngFor="let week of calendar.mounth">
+    <div class="day" *ngFor="let day of calendar.week"></div>
+  </div>
+</div>

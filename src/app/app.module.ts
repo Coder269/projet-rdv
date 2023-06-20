@@ -8,6 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EditrdvComponent } from './editrdv/editrdv.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditrdvComponent } from './editrdv/editrdv.component';
     MenuComponent,
     RegisterComponent,
     LoginComponent,
-    EditrdvComponent
+    EditrdvComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
