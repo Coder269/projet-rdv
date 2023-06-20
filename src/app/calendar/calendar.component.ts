@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
 
 class day {
-  public day: Array<number> = [];
-  constructor() {
-    let i: number = 0;
-    while (i++ < 12) {
-      this.day[i] = i + 7;
-    }
-  }
+  constructor(private dayOfWeek: number, private dayOfMounth: number) {}
 }
 
 class mounth {
   public mounth: Array<day> = [];
-  constructor(private mounthNumber: number, private isBisextil: boolean) {
+  constructor(
+    private mounthNumber: number,
+    private isBisextil: boolean,
+    private year: number
+  ) {
     let nbDay: number;
-    if ([1, 3, 5, 7, 8, 10, 12].includes(mounthNumber)) {
+    if ([0, 2, 4, 6, 7, 9, 11].includes(mounthNumber)) {
       nbDay = 31;
     } else if (mounthNumber == 2) {
       isBisextil ? (nbDay = 29) : (nbDay = 28);
@@ -23,8 +21,12 @@ class mounth {
     }
 
     let i: number = 0;
-    while (i++ < nbDay) {
-      this.mounth[i] = new day();
+    while (i < nbDay) {
+      this.mounth[i] = new day(
+        new Date(2023, mounthNumber - 1, i).getDay(),
+        i + 1
+      );
+      i++;
     }
   }
 }
@@ -41,38 +43,30 @@ class year {
     } else isBisextil = false;
 
     let i: number = 0;
-    while (i++ < 12) {
-      this.year[i] = new mounth(i, isBisextil);
-    }
-  }
-}
-class years {
-  public years: Array<year> = [];
-  constructor(private firstyear: number, private lastyear: number) {
-    let i: number = 0;
-    while (i++ <= lastyear - firstyear) {
-      this.years[i] = new year(firstyear + i - 1);
+    while (i < 12) {
+      this.year[i] = new mounth(i + 1, isBisextil, yearNumber);
+      i++;
     }
   }
 }
 
-class Display {
-  public week: Array<number> = [];
-  public mounth: Array<number> = [];
+class display {
+  public weekGrid: Array<number> = [];
+  public mounthGrid: Array<number> = [];
   public display: string = 'mounth';
 
-  constructor() {
+  constructor(private mounthToDisplay: number) {
     let i: number = 0;
 
     while (i < 7) {
-      this.week[i] = i;
+      this.weekGrid[i] = i;
       i++;
     }
 
     i = 0;
 
     while (i < 4) {
-      this.mounth[i] = i;
+      this.mounthGrid[i] = i;
       i++;
     }
   }
@@ -84,7 +78,7 @@ class Display {
   styleUrls: ['./calendar.component.css'],
 })
 export class CalendarComponent {
-  public calendar: any = new Display();
+  public calendar: any = new display(12);
   constructor() {
     console.log(this.calendar);
   }

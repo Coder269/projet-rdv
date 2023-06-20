@@ -1,4 +1,10 @@
-<div class="calendar" *ngIf="calendar.display == 'mounth'">
+<main>
+  <form action="">
+    <label for="mounth">Mois : </label>
+    <input name="mounth" type="mounth" />
+    <label for="year">Année : </label>
+    <input name="year" type="year" />
+  </form>
   <div class="daysLabel">
     <span>Lundi</span>
     <span>Mardi</span>
@@ -8,7 +14,15 @@
     <span>Samedi</span>
     <span>Dimanche</span>
   </div>
-  <div class="week" *ngFor="let week of calendar.mounth">
-    <div class="day" *ngFor="let day of calendar.week"></div>
+  <div class="calendar" *ngIf="calendar.display == 'mounth'">
+    <table class="calendar">
+      <tr class="week" *ngFor="let week of calendar.mounthGrid; let i = index">
+        <td
+          class="day"
+          *ngFor="let day of calendar.weekGrid; let j = index"
+          id="`${i}`"
+        ></td>
+      </tr>
+    </table>
   </div>
-</div>
+</main>
