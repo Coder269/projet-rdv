@@ -8,6 +8,8 @@ import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EditrdvComponent } from './editrdv/editrdv.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { MenuCalendarComponent } from './side-bar/menu-calendar/menu-calendar.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,12 @@ import { EditrdvComponent } from './editrdv/editrdv.component';
     MenuComponent,
     RegisterComponent,
     LoginComponent,
-    EditrdvComponent
+    EditrdvComponent,
+    SideBarComponent,
+    MenuCalendarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

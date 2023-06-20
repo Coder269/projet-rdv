@@ -1,0 +1,26 @@
+.menuCalendarContainer {
+  margin: 0;
+  padding: 10px;
+  max-width: 100%;
+}
+
+h2 {
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+
+h2 span {
+  color: #EF4444;
+  font-weight: 700;
+}
+
+table {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tableHeader {
+  font-weight: 400;
+  color: #71717A;
+}
