@@ -1,35 +1,38 @@
-:host{
-    display: block;
+.allComponent {
     height: 80vh;
 }
 
-main{
-    height: 100%;
-}
-
-.daysLabel{
+.dayOfWeek {
     display: flex;
     flex-direction: row;
+    list-style-type: none;
     justify-content: space-around;
-    margin: 20px 0;
+    padding: 0;
 }
+
 
 .calendar {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.week{
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
+    flex-wrap: wrap;
     align-items: stretch;
+    height: 100%;
+    justify-content: space-around;
+    gap: 10px;
+    margin: auto;
 }
 
-.day{
-    border: 1px solid gray;
-    flex-grow: 1;
+.calendar>* {
+    min-width: 12.25%;
+    border-radius: 5px;
+    border: solid 1px gray;
 }
 
+.day {
+    background-color: lightblue;
+}
+
+.prevDay,
+.nextDay {
+    background-color: lightgray;
+}
