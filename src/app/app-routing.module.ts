@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { authGuard } from './auth.guard';
 
 const routes: Routes = [
