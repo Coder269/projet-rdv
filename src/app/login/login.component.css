@@ -37,6 +37,7 @@
   color: brown;
   text-align: center;
   font-size: larger;
+  margin-bottom: 10px;
 }
 
 .warning {
@@ -69,6 +70,8 @@
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
+  width: 100px;
+
 }
 
 .button-3:focus:not(:focus-visible):not(.focus-visible) {

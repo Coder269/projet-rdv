@@ -34,6 +34,7 @@ fieldset label {
   font-size: larger;
   background-color: burlywood;
   color: brown;
+  margin-bottom: 10px;
 }
 
 
@@ -61,6 +62,7 @@ fieldset label {
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
+  width: 100px;
 }
 
 .button-3:focus:not(:focus-visible):not(.focus-visible) {
