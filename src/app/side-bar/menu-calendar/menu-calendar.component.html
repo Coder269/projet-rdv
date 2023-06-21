@@ -10,5 +10,12 @@
         </th>
       </tr>
     </thead>
+    <tbody>
+      <tr>
+        <td *ngFor="let day of date.monthDays; let i = index">
+          {{ day }}
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
