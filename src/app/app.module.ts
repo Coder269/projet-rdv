@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,8 @@ import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EditrdvComponent } from './editrdv/editrdv.component';
-import { FormsModule } from '@angular/forms';
+import { SideBarComponent } from './side-bar/side-bar.component';
+
 import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
@@ -19,14 +21,12 @@ import { CalendarComponent } from './calendar/calendar.component';
     RegisterComponent,
     LoginComponent,
     EditrdvComponent,
-    CalendarComponent
+    SideBarComponent,
+
+    CalendarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

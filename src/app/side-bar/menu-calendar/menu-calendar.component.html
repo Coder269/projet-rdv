@@ -1,0 +1,19 @@
+<div class="menuCalendarContainer">
+  <h2>
+    {{ date.currentMonth }} <span>{{ date.currentYear }}</span>
+  </h2>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let day of date.weekDays" class="tableHeader">
+          {{ day.slice(0, 3) }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td *ngFor="let day of date.monthDays; let i = index"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
