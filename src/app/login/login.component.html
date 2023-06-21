@@ -1,1 +1,21 @@
-<p>login works!</p>
+<h1 style="text-align: center;">Login</h1>
+<br>
+<form #form="ngForm" (ngSubmit)="onLogin(form)">
+  <div class="field">
+    <label>User Name</label>
+    <input required ngModel name="username" #username="ngModel" type="text" />
+    <div class="warning" *ngIf="username.touched && username.errors?.['required']" >User Name is required!</div>
+  </div>
+  <div class="field">
+    <label for="">Password</label>
+    <input required ngModel name="password" #password="ngModel" type="password" />
+    <div class="warning" *ngIf="password.touched && password.errors?.['required']">Password is required!</div>
+  </div>
+  <br>
+  <div *ngIf="wrongLogin" class="wrong" >Wrong username or password, please try again or register!</div>
+  <br>
+  <div class="btn">
+  <button type="submit" [disabled]="form.invalid">Login</button>
+  <button routerLink="/">Cancel</button>
+</div>
+</form>

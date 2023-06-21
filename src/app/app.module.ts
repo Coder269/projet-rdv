@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EditrdvComponent } from './editrdv/editrdv.component';
 import { FormsModule } from '@angular/forms';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     RegisterComponent,
     LoginComponent,
-    EditrdvComponent
+    EditrdvComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

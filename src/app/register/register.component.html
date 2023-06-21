@@ -1,18 +1,26 @@
+<h1 style="text-align: center;">Register</h1>
 <form #form="ngForm" (ngSubmit)="onRegister(form)">
   <fieldset>
     <label>User Name:</label>
-    <input type="text" />
+    <input required ngModel name="username" #username="ngModel" type="text" />
+    <div class="warning" *ngIf="username.errors?.['required']" >User Name is required!</div>
   </fieldset>
   <fieldset>
     <label>Email:</label>
-    <input type="text" />
+    <input required email ngModel name="email" #email="ngModel" type="text" />
+    <div class="warning" *ngIf="email.errors?.['required']" >Email is required!</div>
+    <div class="warning" *ngIf="email.errors?.['email']" >Please enter a valid email address!</div>
   </fieldset>
   <fieldset>
     <label for="">Password:</label>
-    <input type="text" />
+    <input required ngModel name="password" #password="ngModel" type="password" />
+    <div class="warning" *ngIf="password.errors?.['required']">Password is required!</div>
   </fieldset>
   <br>
+  <div *ngIf="alreadyRegistered" class="registered">This email address is already taken!</div>
+  <br>
   <div class="btn">
-  <button type="submit">Register</button>
+  <button type="submit" [disabled]="form.invalid">Register</button>
+  <button routerLink="/">Cancel</button>
 </div>
 </form>

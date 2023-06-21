@@ -1,0 +1,33 @@
+.field {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content:center ;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.field label {
+  margin-bottom: 10px;
+}
+
+.field input {
+  width: 20%;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn button {
+  margin-right: 20px;
+}
+
+.wrong {
+  background-color: burlywood;
+  color: brown;
+  text-align: center;
+  font-size: larger;
+}
+

@@ -5,10 +5,27 @@ fieldset {
 }
 
 .btn {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.btn button {
+  margin-right: 20px;
 }
 
 fieldset label {
 
   margin-bottom: 10px;
 }
+
+.warning {
+  background-color: burlywood;
+  color: brown;
+}
+.registered {
+  text-align: center;
+  font-size: larger;
+  background-color: burlywood;
+  color: brown;
+}
+
