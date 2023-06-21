@@ -1,5 +1,6 @@
 <h1 style="text-align: center;">Login</h1>
-<br>
+<h3 style="align-items: center;">You don't have an account, please <a routerLink="/register">Register</a></h3>
+
 <form #form="ngForm" (ngSubmit)="onLogin(form)">
   <div class="field">
     <label>User Name</label>
@@ -18,3 +19,5 @@
   <button class="button-3" type="submit" [disabled]="form.invalid">Login</button>
 </div>
 </form>
+
+
