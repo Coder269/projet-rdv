@@ -37,6 +37,5 @@ export class LoginComponent {
 
     }
     this.wrongLogin = true;
-    console.log(this.userService.users, 'USER');
   }
 }
