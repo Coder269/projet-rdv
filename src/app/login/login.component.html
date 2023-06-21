@@ -4,7 +4,7 @@
   <div class="field">
     <label>User Name</label>
     <input required ngModel name="username" #username="ngModel" type="text" />
-    <div class="warning" *ngIf="username.touched && username.errors?.['required']" >User Name is required!</div>
+    <div class="warning" *ngIf="username.touched && username.errors?.['required']" >Username is required!</div>
   </div>
   <div class="field">
     <label for="">Password</label>
@@ -15,7 +15,7 @@
   <div *ngIf="wrongLogin" class="wrong" >Wrong username or password, please try again or register!</div>
   <br>
   <div class="btn">
-  <button type="submit" [disabled]="form.invalid">Login</button>
-  <button routerLink="/">Cancel</button>
+  <button class="button-3" type="submit" [disabled]="form.invalid">Login</button>
+  <button class="button-4" routerLink="/">Cancel</button>
 </div>
 </form>
