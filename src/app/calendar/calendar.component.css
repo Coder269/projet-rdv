@@ -23,7 +23,7 @@
 }
 
 .calendar>* {
-    min-width: 12.25%;
+    width: 11%;
     border-radius: 5px;
     border: solid 1px gray;
 }

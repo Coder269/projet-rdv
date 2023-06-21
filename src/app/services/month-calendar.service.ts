@@ -4,7 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MonthCalendarService {
-  months: Array<string> = [
+  public selectedYear: number = new Date().getFullYear();
+  public selectedMonth: number = new Date().getMonth() + 1;
+  public month: Array<number> = [];
+  public prevMonth: Array<number> = [];
+  public nextMonth: Array<number> = [];
+  public monthInLetter: Array<string> = [
     'Janvier',
     'Février',
     'Mars',
@@ -18,8 +23,7 @@ export class MonthCalendarService {
     'Novembre',
     'Décembre',
   ];
-
-  weekDays: Array<string> = [
+  public weekDays: Array<string> = [
     'Lundi',
     'Mardi',
     'Mercredi',
@@ -30,4 +34,79 @@ export class MonthCalendarService {
   ];
 
   constructor() {}
+
+  isBisextil(year: number): boolean {
+    if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+      return true;
+    } else return false;
+  }
+
+  nbDay(month: number, year: number): number {
+    if ([0, 2, 4, 6, 7, 9, 11].includes(month)) {
+      return 31;
+    } else if (month == 1) {
+      if (this.isBisextil(year)) {
+        return 29;
+      } else {
+        return 28;
+      }
+    } else {
+      return 30;
+    }
+  }
+  generateMonth(): any {
+    this.month.length = this.nbDay(this.selectedMonth - 1, this.selectedYear);
+    for (let i = 0; i < this.month.length; i++) {
+      this.month[i] = new Date(
+        this.selectedYear,
+        this.selectedMonth - 1,
+        i
+      ).getDay();
+    }
+    this.fillEmpty();
+  }
+
+  fillEmpty() {
+    this.prevMonth.length = this.month[0];
+    this.nextMonth.length =
+      7 - ((this.month.length + this.prevMonth.length) % 7);
+
+    let prevNbDay = this.nbDay(this.selectedMonth - 2, this.selectedYear);
+    for (let i = this.prevMonth.length; i > 0; i--) {
+      this.prevMonth[this.prevMonth.length - i] = prevNbDay - i + 1;
+    }
+    console.log(this.prevMonth);
+    for (let i = 1; i <= this.nextMonth.length; i++) {
+      this.nextMonth[i - 1] = i;
+    }
+  }
+  createRDV(event: any) {
+    console.log(event);
+  }
+
+  changeNextMonth() {
+    if (this.selectedMonth < 11) {
+      this.selectedMonth = this.selectedMonth + 1;
+      this.generateMonth();
+      this.fillEmpty();
+    } else if ((this.selectedMonth = 11)) {
+      this.selectedMonth = 0;
+      this.selectedYear = this.selectedYear + 1;
+      this.generateMonth();
+      this.fillEmpty();
+    }
+  }
+
+  changePrevMonth() {
+    if (this.selectedMonth > 0) {
+      this.selectedMonth = this.selectedMonth - 1;
+      this.generateMonth();
+      this.fillEmpty();
+    } else if ((this.selectedMonth = 1)) {
+      this.selectedMonth = 11;
+      this.selectedYear = this.selectedYear - 1;
+      this.generateMonth();
+      this.fillEmpty();
+    }
+  }
 }
