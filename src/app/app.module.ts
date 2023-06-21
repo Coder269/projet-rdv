@@ -23,6 +23,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     EditrdvComponent,
     SideBarComponent,
     MenuCalendarComponent,
+    CalendarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
