@@ -1,0 +1,39 @@
+:root {
+  width: 100%;
+}
+
+.leftArrow,
+.rightArrow {
+  width: 30px;
+  fill: #9c9c9c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.changeView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.viewSelected {
+  margin: 0;
+}
+
+.viewContainer {
+  margin: 15px;
+}
+
+.viewSelector {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.viewSelectorTitle {
+  color: #ff1d58;
+  font-weight: 600;
+  margin-right: 20px;
+}

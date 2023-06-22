@@ -11,6 +11,8 @@ export class MonthCalendarService {
   public nextMonth: Array<number> = [];
   public monthAllDays: Array<number> = [];
   public monthWeeks: Array<any> = [];
+  public selectedView: string = 'Mois';
+  public selectedWeek: number = 0;
   public monthInLetter: Array<string> = [
     'Janvier',
     'Février',
@@ -138,5 +140,21 @@ export class MonthCalendarService {
       this.monthWeeks.push(this.monthAllDays.slice(i * 7, 7 + i * 7));
     }
     console.log(this.monthWeeks, nbWeekInMonth);
+  }
+
+  selectWeekOnMonth() {
+    for (let i = 0; i < this.monthWeeks.length; i++) {}
+  }
+
+  changeView() {
+    this.selectedView === 'Mois'
+      ? (this.selectedView = 'Semaine')
+      : this.selectedView === 'Semaine'
+      ? (this.selectedView = 'Mois')
+      : null;
+  }
+
+  getSelectedWeek(i: number) {
+    this.selectedWeek = i;
   }
 }

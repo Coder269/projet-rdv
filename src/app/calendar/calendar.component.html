@@ -1,7 +1,9 @@
-<h2>
-  {{ monthCalendarService.monthInLetter[monthCalendarService.selectedMonth] }}
-  <span>{{ monthCalendarService.selectedYear }}</span>
-</h2>
+<div>
+  <h2>
+    {{ monthCalendarService.monthInLetter[monthCalendarService.selectedMonth] }}
+    <span>{{ monthCalendarService.selectedYear }}</span>
+  </h2>
+</div>
 <div class="allComponent">
   <ul class="dayOfWeek">
     <li *ngFor="let day of monthCalendarService.weekDays">{{ day }}</li>

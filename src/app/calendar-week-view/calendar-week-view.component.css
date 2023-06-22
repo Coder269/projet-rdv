@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+
+.allComponent {
+  height: 80vh;
+  width: 100%;
+}
+
+.dayOfWeek {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  height: 100%;
+  justify-content: space-around;
+  gap: 10px;
+  margin: auto;
+}
+
+.calendar>* {
+  min-width: 12.25%;
+  border-radius: 5px;
+  border: solid 1px gray;
+}
+
+.day {
+  background-color: lightblue;
+}

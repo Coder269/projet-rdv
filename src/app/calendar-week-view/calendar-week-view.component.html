@@ -1,0 +1,22 @@
+<div>
+  <div class="allComponent">
+    <ul class="dayOfWeek">
+      <li *ngFor="let day of monthCalendarService.weekDays">{{ day }}</li>
+    </ul>
+    <div class="calendar">
+      <div
+        class="day"
+        *ngFor="
+          let day of monthCalendarService.monthWeeks[
+            monthCalendarService.selectedWeek
+          ];
+          let j = index
+        "
+        [id]="j + 1"
+        (click)="monthCalendarService.createRDV($event)"
+      >
+        {{ day }}
+      </div>
+    </div>
+  </div>
+</div>

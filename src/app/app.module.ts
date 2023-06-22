@@ -12,6 +12,8 @@ import { EditrdvComponent } from './editrdv/editrdv.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { MenuCalendarComponent } from './side-bar/menu-calendar/menu-calendar.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarViewComponent } from './calendar-view/calendar-view.component';
+import { CalendarWeekViewComponent } from './calendar-week-view/calendar-week-view.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     SideBarComponent,
     MenuCalendarComponent,
     CalendarComponent,
+    CalendarViewComponent,
+    CalendarWeekViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
