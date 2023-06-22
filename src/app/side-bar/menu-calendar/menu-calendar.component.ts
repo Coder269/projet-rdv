@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MonthCalendarService } from '../services/month-calendar.service';
-
+import { MonthCalendarService } from 'src/app/services/month-calendar.service';
 @Component({
-  selector: 'app-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css'],
+  selector: 'app-menu-calendar',
+  templateUrl: './menu-calendar.component.html',
+  styleUrls: ['./menu-calendar.component.css'],
 })
-export class CalendarComponent implements OnInit {
+export class MenuCalendarComponent implements OnInit {
   monthCalendarService: MonthCalendarService;
   nextMonth: any;
   month: any;
