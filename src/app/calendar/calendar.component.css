@@ -1,5 +1,6 @@
 .allComponent {
     height: 80vh;
+    max-width: 100%;
 }
 
 .dayOfWeek {
@@ -23,7 +24,7 @@
 }
 
 .calendar>* {
-    width: 11%;
+    min-width: 12.25%;
     border-radius: 5px;
     border: solid 1px gray;
 }
