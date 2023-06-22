@@ -1,22 +1,31 @@
+<h2>
+  {{ monthCalendarService.monthInLetter[monthCalendarService.selectedMonth] }}
+  <span>{{ monthCalendarService.selectedYear }}</span>
+</h2>
 <div class="allComponent">
-    <form name="selectDate">
-        <label for="year">Year : </label>
-        <input type="number" name="year" [(ngModel)]='selectedYear' min="2023" max="2100" (change)="generateMonth()">
-        <label for="mounth">Month : </label>
-        <input type="number" name="mounth" [(ngModel)]='selectedMonth' min="1" max="12" (change)="generateMonth()">
-    </form>
-    <ul class="dayOfWeek">
-        <li>Lundi</li>
-        <li>Mardi</li>
-        <li>Mercredi</li>
-        <li>Jeudi</li>
-        <li>Vendredi</li>
-        <li>Samedi</li>
-        <li>Dimanche</li>
-    </ul>
-    <div class="calendar">
-        <div class="prevDay" *ngFor="let day of prevMonth; let i=index">{{prevMonth[i]}}</div>
-        <div class="day" *ngFor='let day of month; let j=index' [id]=j+1 (click)="createRDV($event)">{{j+1}}</div>
-        <div class="nextDay" *ngFor="let day of nextMonth; let k=index">{{nextMonth[k]}}</div>
+  <ul class="dayOfWeek">
+    <li *ngFor="let day of monthCalendarService.weekDays">{{ day }}</li>
+  </ul>
+  <div class="calendar">
+    <div
+      class="prevDay"
+      *ngFor="let day of monthCalendarService.prevMonth; let i = index"
+    >
+      {{ monthCalendarService.prevMonth[i] }}
     </div>
+    <div
+      class="day"
+      *ngFor="let day of monthCalendarService.month; let j = index"
+      [id]="j + 1"
+      (click)="monthCalendarService.createRDV($event)"
+    >
+      {{ j + 1 }}
+    </div>
+    <div
+      class="nextDay"
+      *ngFor="let day of monthCalendarService.nextMonth; let k = index"
+    >
+      {{ monthCalendarService.nextMonth[k] }}
+    </div>
+  </div>
 </div>
