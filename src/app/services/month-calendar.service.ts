@@ -9,6 +9,8 @@ export class MonthCalendarService {
   public month: Array<number> = [];
   public prevMonth: Array<number> = [];
   public nextMonth: Array<number> = [];
+  public monthAllDays: Array<number> = [];
+  public monthWeeks: Array<any> = [];
   public monthInLetter: Array<string> = [
     'Janvier',
     'Février',
@@ -64,6 +66,11 @@ export class MonthCalendarService {
       ).getDay();
     }
     this.fillEmpty();
+    this.monthAllDays = [];
+    this.getMonthAllDays();
+    this.monthWeeks = [];
+    this.getWeeks();
+    console.log(this.monthAllDays);
   }
 
   fillEmpty() {
@@ -108,5 +115,28 @@ export class MonthCalendarService {
       this.generateMonth();
       this.fillEmpty();
     }
+  }
+
+  getMonthAllDays() {
+    for (let i = this.prevMonth.length; i > 0; i--) {
+      let prevNbDay = this.nbDay(this.selectedMonth - 2, this.selectedYear);
+      this.monthAllDays.push(prevNbDay - i + 1);
+    }
+
+    for (let i = 0; i < this.month.length; i++) {
+      this.monthAllDays.push(i + 1);
+    }
+
+    for (let i = 1; i <= this.nextMonth.length; i++) {
+      this.monthAllDays.push(i);
+    }
+  }
+
+  getWeeks() {
+    const nbWeekInMonth = Math.ceil(this.monthAllDays.length / 7);
+    for (let i = 0; i < nbWeekInMonth; i++) {
+      this.monthWeeks.push(this.monthAllDays.slice(i * 7, 7 + i * 7));
+    }
+    console.log(this.monthWeeks, nbWeekInMonth);
   }
 }
