@@ -1,4 +1,6 @@
 <div class="navbar">
-<a routerLink="/login">Login</a>
-<a routerLink="/register">Register</a>
+<a *ngIf="userService.isLoggedIn"><strong>Hello {{userService.currentUser.name}}</strong></a>
+<a *ngIf="!userService.isLoggedIn" routerLink="/login">Log In</a>
+<a *ngIf="!userService.isLoggedIn" routerLink="/register">Register</a>
+<a *ngIf="userService.isLoggedIn" routerLink="/login" (click)="logOut()">Log Out</a>
 </div>

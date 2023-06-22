@@ -6,9 +6,19 @@ import { User } from '../User';
 })
 export class UserService {
 
-  users: User[];
+  users: User[] = [];
+  isLoggedIn: boolean = false;
+  currentUser: User;
 
   constructor() {
-    this.users =  [];
+    this.currentUser = {} as User;
    }
+
+   addUser(user: User) {
+
+    this.users.push(user);
+
+   }
+
+
 }
