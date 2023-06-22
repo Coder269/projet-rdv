@@ -10,7 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EditrdvComponent } from './editrdv/editrdv.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-
+import { MenuCalendarComponent } from './side-bar/menu-calendar/menu-calendar.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ReservationComponent } from './reservation/reservation.component';
 
@@ -23,7 +23,7 @@ import { ReservationComponent } from './reservation/reservation.component';
     LoginComponent,
     EditrdvComponent,
     SideBarComponent,
-
+    MenuCalendarComponent,
     CalendarComponent,
       ReservationComponent,
   ],

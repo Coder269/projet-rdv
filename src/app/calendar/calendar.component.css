@@ -1,5 +1,6 @@
 .allComponent {
     height: 80vh;
+    max-width: 100%;
 }
 
 .dayOfWeek {

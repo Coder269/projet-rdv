@@ -1,0 +1,68 @@
+.menuCalendarContainer {
+  margin: 0;
+  padding: 10px;
+  max-width: 100%;
+}
+
+h2 {
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+
+h2 span {
+  color: #ff1d58;
+  font-weight: 700;
+}
+
+table {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+thead {
+  display: inline-table;
+}
+
+.tableHeader {
+  font-weight: 400;
+  color: #c9c9c9;
+}
+
+.leftArrow,
+.rightArrow {
+  width: 30px;
+  fill: #fff;
+  cursor: pointer;
+}
+
+.sideHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.prevDay,
+.nextDay {
+  color: #4c4c4c;
+  text-align: center;
+}
+
+.day {
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.day:hover {
+  color: #ff1d58;
+}

@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MonthCalendarService } from '../services/month-calendar.service';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  styleUrls: ['./calendar.component.css'],
 })
-export class CalendarComponent {
-  public selectedYear:number = new Date().getFullYear();
-  public selectedMonth:number = new Date().getMonth()+1;
-  public month:Array<number> = [];
-  public prevMonth:Array<number> = []
-  public nextMonth: Array<number> = []
-
-  constructor(){
-    this.generateMonth()
+export class CalendarComponent implements OnInit {
+  monthCalendarService: MonthCalendarService;
+  nextMonth: any;
+  month: any;
+  prevMonth: any;
+  constructor(monthCalendarService: MonthCalendarService) {
+    this.monthCalendarService = monthCalendarService;
   }
+<<<<<<< HEAD
 
   isBisextil(year:number): boolean{
     if (year%4 == 0  && (year% 100 !=0 || year %400 ==0)){
@@ -72,5 +72,10 @@ export class CalendarComponent {
     let modal = document.getElementById("myModal");
     if (modal)
     modal.style.display = "none";
+=======
+  ngOnInit(): void {
+    this.monthCalendarService.generateMonth();
+    console.log(this.monthCalendarService.month);
+>>>>>>> 582c3f82a129afc467cb503c4b2eafc55364ee95
   }
 }
