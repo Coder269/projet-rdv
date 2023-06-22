@@ -14,53 +14,9 @@ export class CalendarComponent implements OnInit {
   constructor(monthCalendarService: MonthCalendarService) {
     this.monthCalendarService = monthCalendarService;
   }
-<<<<<<< HEAD
-
-  isBisextil(year:number): boolean{
-    if (year%4 == 0  && (year% 100 !=0 || year %400 ==0)){
-      return true
-    }
-    else return false
-  }
-
-  nbDay(month:number, year:number): number{
-    if([0, 2, 4, 6, 7, 9, 11].includes(month)){
-      return 31;
-    }
-    else if (month == 1)
-    {
-      if (this.isBisextil(year))
-      {
-        return 29
-      }
-      else{
-        return 28
-      }
-    }
-    else{
-      return 30;
-    }
-  }
-  generateMonth(): void {
-    this.month.length = this.nbDay(this.selectedMonth-1 , this.selectedYear);
-    for (let i=0; i<this.month.length; i++){
-      this.month[i] = new Date(this.selectedYear, this.selectedMonth-1, i).getDay()
-    }
-  this.fillEmpty()
-  }
-
-  fillEmpty(){
-    this.prevMonth.length=this.month[0];
-    this.nextMonth.length=7-((this.month.length+this.prevMonth.length)%7)
-
-    let prevNbDay = this.nbDay(this.selectedMonth-2, this.selectedYear)
-    for(let i=this.prevMonth.length; i>0; i--){
-      this.prevMonth[this.prevMonth.length-i]=prevNbDay-i+1;
-    }
-    console.log(this.prevMonth)
-    for(let i=1; i<=this.nextMonth.length; i++){
-      this.nextMonth[i-1]=i;
-    }
+  ngOnInit(): void {
+    this.monthCalendarService.generateMonth();
+    console.log(this.monthCalendarService.month);
   }
   createRDV(){
     let modal = document.getElementById("myModal");
@@ -72,10 +28,6 @@ export class CalendarComponent implements OnInit {
     let modal = document.getElementById("myModal");
     if (modal)
     modal.style.display = "none";
-=======
-  ngOnInit(): void {
-    this.monthCalendarService.generateMonth();
-    console.log(this.monthCalendarService.month);
->>>>>>> 582c3f82a129afc467cb503c4b2eafc55364ee95
   }
 }
+
