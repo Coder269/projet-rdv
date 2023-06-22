@@ -16,7 +16,8 @@
     </ul>
     <div class="calendar">
         <div class="prevDay" *ngFor="let day of prevMonth; let i=index">{{prevMonth[i]}}</div>
-        <div class="day" *ngFor='let day of month; let j=index' [id]=j+1 (click)="createRDV($event)">{{j+1}}</div>
+        <div class="day" *ngFor='let day of month; let j=index' [id]=j+1 (click)="createRDV()">{{j+1}}</div>
         <div class="nextDay" *ngFor="let day of nextMonth; let k=index">{{nextMonth[k]}}</div>
     </div>
 </div>
+<app-reservation (cancelEvent)="dismiss()"  id="myModal" class="modal"></app-reservation>

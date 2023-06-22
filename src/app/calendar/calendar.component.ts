@@ -62,7 +62,15 @@ export class CalendarComponent {
       this.nextMonth[i-1]=i;
     }
   }
-  createRDV(event:any){
-    console.log(event)
+  createRDV(){
+    let modal = document.getElementById("myModal");
+    if (modal)
+    modal.style.display = "block";
+  }
+
+  dismiss() {
+    let modal = document.getElementById("myModal");
+    if (modal)
+    modal.style.display = "none";
   }
 }

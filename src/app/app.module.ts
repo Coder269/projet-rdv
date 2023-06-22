@@ -12,6 +12,7 @@ import { EditrdvComponent } from './editrdv/editrdv.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 
 import { CalendarComponent } from './calendar/calendar.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     SideBarComponent,
 
     CalendarComponent,
+      ReservationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
