@@ -1,22 +1,41 @@
-<h1 style="text-align: center;">Login</h1>
-<h3 style="align-items: center;">You don't have an account, please <a routerLink="/register">Register</a></h3>
+<h1 style="text-align: center">Login</h1>
+<h3>
+  You don't have an account, please <a routerLink="/register">Register</a>
+</h3>
 
 <form #form="ngForm" (ngSubmit)="onLogin(form)">
   <div class="field">
     <label>User Name</label>
     <input required ngModel name="username" #username="ngModel" type="text" />
-    <div class="warning" *ngIf="username.touched && username.errors?.['required']" >Username is required!</div>
+    <div
+      class="warning"
+      *ngIf="username.touched && username.errors?.['required']"
+    >
+      *Username is required!
+    </div>
   </div>
   <div class="field">
     <label for="">Password</label>
-    <input required ngModel name="password" #password="ngModel" type="password" />
-    <div class="warning" *ngIf="password.touched && password.errors?.['required']">Password is required!</div>
+    <input
+      required
+      ngModel
+      name="password"
+      #password="ngModel"
+      type="password"
+    />
+    <div
+      class="warning"
+      *ngIf="password.touched && password.errors?.['required']"
+    >
+      *Password is required!
+    </div>
   </div>
-  <br>
-  <div *ngIf="wrongLogin" class="wrong" >Wrong username or password, please try again or register!</div>
   <div class="btn">
-  <button class="button-3" type="submit" [disabled]="form.invalid">Login</button>
-</div>
+    <button class="button-3" type="submit" [disabled]="form.invalid">
+      Login
+    </button>
+  </div>
+  <div *ngIf="wrongLogin" class="wrong">
+    Wrong username or password, please try again or register!
+  </div>
 </form>
-
-

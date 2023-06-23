@@ -39,6 +39,11 @@ thead {
   cursor: pointer;
 }
 
+.leftArrow:hover,
+.rightArrow:hover {
+  fill: #ff1d58;
+}
+
 .sideHeader {
   display: flex;
   flex-direction: row;
@@ -64,5 +69,5 @@ thead {
 }
 
 .day:hover {
-  color: #ff1d58;
+  background-color: #ff1d58;
 }

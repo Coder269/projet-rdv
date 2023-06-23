@@ -1,22 +1,27 @@
 :host {
- width: 40%;
- margin: auto;
- display: flex;
- flex-direction: column;
- align-items: center;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h3 a {
+  color: #ff1d58;
 }
 
 .field {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content:center ;
+  justify-content: center;
   align-items: center;
   margin-bottom: 25px;
-}
-
-.field label {
-  margin-bottom: 10px;
 }
 
 .field input {
@@ -33,18 +38,16 @@
 }
 
 .wrong {
-  background-color: burlywood;
   color: brown;
   text-align: center;
   font-size: larger;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .warning {
-  background-color: burlywood;
   color: brown;
-  font-size: larger;
-
+  font-size: 14px;
 }
 
 .button-3 {
@@ -57,7 +60,7 @@
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
@@ -98,4 +101,9 @@
 .button-3:active {
   background-color: #298e46;
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+label {
+  width: 100%;
+  text-align: left;
 }
