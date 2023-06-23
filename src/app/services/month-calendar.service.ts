@@ -78,7 +78,7 @@ export class MonthCalendarService {
   fillEmpty() {
     this.prevMonth.length = this.month[0];
     this.nextMonth.length =
-      7 - ((this.month.length + this.prevMonth.length) % 7);
+      (7 - ((this.month.length + this.prevMonth.length) % 7))%7;
 
     let prevNbDay = this.nbDay(this.selectedMonth - 2, this.selectedYear);
     for (let i = this.prevMonth.length; i > 0; i--) {
