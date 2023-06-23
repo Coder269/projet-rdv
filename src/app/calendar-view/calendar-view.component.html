@@ -33,19 +33,48 @@
         />
       </svg>
     </div>
-    <select
-      class="selectInput"
+    <div
+      class="inputContainer"
       *ngIf="monthCalendarService.selectedView === 'Semaine'"
-      multiple
     >
-      <option
-        *ngFor="let week of monthCalendarService.monthWeeks; let i = index"
-        (click)="monthCalendarService.getSelectedWeek(i)"
+      <input
+        type="text"
+        (click)="monthCalendarService.showSelect()"
+        value=" Du {{
+          monthCalendarService.monthWeeks[monthCalendarService.selectedWeek][0]
+        }} au {{
+          monthCalendarService.monthWeeks[monthCalendarService.selectedWeek][6]
+        }}"
+      />
+      <select
+        class="selectInput"
+        [hidden]="monthCalendarService.showWeekChoice"
+        (click)="monthCalendarService.showSelect()"
+        multiple
       >
-        Du {{ week[0] }} au {{ week[6] }}
-      </option>
-    </select>
+        <option
+          *ngFor="let week of monthCalendarService.monthWeeks; let i = index"
+          (click)="monthCalendarService.getSelectedWeek(i)"
+        >
+          Du {{ week[0] }} au {{ week[6] }}
+        </option>
+      </select>
+    </div>
   </div>
+  <h2 class="weekTitle" *ngIf="monthCalendarService.selectedView === 'Semaine'">
+    Semaine du<br /><span>{{
+      monthCalendarService.monthWeeks[monthCalendarService.selectedWeek][0]
+    }}</span>
+    au
+    <span
+      >{{
+        monthCalendarService.monthWeeks[monthCalendarService.selectedWeek][6]
+      }}
+      {{
+        monthCalendarService.monthInLetter[monthCalendarService.selectedMonth]
+      }}</span
+    >
+  </h2>
   <ng-container
     class="viewContainer"
     [ngSwitch]="monthCalendarService.selectedView"

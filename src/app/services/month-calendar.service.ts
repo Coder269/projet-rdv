@@ -13,6 +13,7 @@ export class MonthCalendarService {
   public monthWeeks: Array<any> = [];
   public selectedView: string = 'Mois';
   public selectedWeek: number = 0;
+  public showWeekChoice: boolean = true;
   public monthInLetter: Array<string> = [
     'Janvier',
     'Février',
@@ -78,7 +79,7 @@ export class MonthCalendarService {
   fillEmpty() {
     this.prevMonth.length = this.month[0];
     this.nextMonth.length =
-      (7 - ((this.month.length + this.prevMonth.length) % 7))%7;
+      (7 - ((this.month.length + this.prevMonth.length) % 7)) % 7;
 
     let prevNbDay = this.nbDay(this.selectedMonth - 2, this.selectedYear);
     for (let i = this.prevMonth.length; i > 0; i--) {
@@ -156,5 +157,9 @@ export class MonthCalendarService {
 
   getSelectedWeek(i: number) {
     this.selectedWeek = i;
+  }
+
+  showSelect() {
+    this.showWeekChoice = !this.showWeekChoice;
   }
 }

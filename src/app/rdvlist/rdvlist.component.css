@@ -4,3 +4,11 @@
   justify-content: center;
   align-items: center;
 }
+
+h2 {
+  width: 100%;
+  margin: 20px 10px;
+  text-align: left;
+  color: #ff1d58;
+  font-size: 18px;
+}

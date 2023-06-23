@@ -5,7 +5,7 @@
 .leftArrow,
 .rightArrow {
   width: 30px;
-  fill: #9c9c9c;
+  fill: #ff1d58;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -58,4 +58,37 @@
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+}
+
+input {
+  width: 120px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+select {
+  position: absolute;
+  width: 130px;
+  top: 35px;
+  right: 0;
+  text-align: right;
+  padding-right: 10px;
+}
+
+option:hover {
+  background-color: #ff1d58;
+}
+
+.weekTitle {
+  text-align: center;
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.weekTitle span {
+  color: #ff1d58;
 }

@@ -1,13 +1,15 @@
 <div>
   <div class="allComponent">
     <ul class="dayOfWeek">
-      <li *ngFor="let day of monthCalendarService.weekDays">{{ day }}</li>
+      <li *ngFor="let day of monthCalendarService.weekDays">
+        {{ day.slice(0, 3) }}
+      </li>
     </ul>
     <div class="calendar">
       <div
         class="day"
         *ngFor="
-          let day of monthCalendarService.monthWeeks[
+          let dayNb of monthCalendarService.monthWeeks[
             monthCalendarService.selectedWeek
           ];
           let j = index
@@ -15,7 +17,19 @@
         [id]="j + 1"
         (click)="monthCalendarService.createRDV($event)"
       >
-        {{ day }}
+        <div class="dayDate">{{ dayNb }}</div>
+        <div class="hours"><span class="beginHour">7H</span></div>
+        <div class="hours"><span class="beginHour">8H</span></div>
+        <div class="hours"><span class="beginHour">9H</span></div>
+        <div class="hours"><span class="beginHour">10H</span></div>
+        <div class="hours"><span class="beginHour">11H</span></div>
+        <div class="hours"><span class="beginHour">12H</span></div>
+        <div class="hours"><span class="beginHour">13H</span></div>
+        <div class="hours"><span class="beginHour">14H</span></div>
+        <div class="hours"><span class="beginHour">15H</span></div>
+        <div class="hours"><span class="beginHour">16H</span></div>
+        <div class="hours"><span class="beginHour">17H</span></div>
+        <div class="hours"><span class="beginHour">18H</span></div>
       </div>
     </div>
   </div>
