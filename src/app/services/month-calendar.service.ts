@@ -73,7 +73,6 @@ export class MonthCalendarService {
     this.getMonthAllDays();
     this.monthWeeks = [];
     this.getWeeks();
-    console.log(this.monthAllDays);
   }
 
   fillEmpty() {
@@ -85,7 +84,6 @@ export class MonthCalendarService {
     for (let i = this.prevMonth.length; i > 0; i--) {
       this.prevMonth[this.prevMonth.length - i] = prevNbDay - i + 1;
     }
-    console.log(this.prevMonth);
     for (let i = 1; i <= this.nextMonth.length; i++) {
       this.nextMonth[i - 1] = i;
     }
@@ -140,7 +138,6 @@ export class MonthCalendarService {
     for (let i = 0; i < nbWeekInMonth; i++) {
       this.monthWeeks.push(this.monthAllDays.slice(i * 7, 7 + i * 7));
     }
-    console.log(this.monthWeeks, nbWeekInMonth);
   }
 
   selectWeekOnMonth() {
