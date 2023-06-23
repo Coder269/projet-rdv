@@ -14,6 +14,7 @@ import { MenuCalendarComponent } from './side-bar/menu-calendar/menu-calendar.co
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 import { CalendarWeekViewComponent } from './calendar-week-view/calendar-week-view.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CalendarWeekViewComponent } from './calendar-week-view/calendar-week-vi
     CalendarComponent,
     CalendarViewComponent,
     CalendarWeekViewComponent,
+    ReservationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

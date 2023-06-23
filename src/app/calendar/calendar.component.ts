@@ -18,4 +18,13 @@ export class CalendarComponent implements OnInit {
     this.monthCalendarService.generateMonth();
     console.log(this.monthCalendarService.month);
   }
+  createRDV() {
+    let modal = document.getElementById('myModal');
+    if (modal) modal.style.display = 'block';
+  }
+
+  dismiss() {
+    let modal = document.getElementById('myModal');
+    if (modal) modal.style.display = 'none';
+  }
 }

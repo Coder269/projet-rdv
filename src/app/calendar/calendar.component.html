@@ -19,7 +19,7 @@
       class="day"
       *ngFor="let day of monthCalendarService.month; let j = index"
       [id]="j + 1"
-      (click)="monthCalendarService.createRDV($event)"
+      (click)="createRDV()"
     >
       {{ j + 1 }}
     </div>
@@ -31,3 +31,8 @@
     </div>
   </div>
 </div>
+<app-reservation
+  (cancelEvent)="dismiss()"
+  id="myModal"
+  class="modal"
+></app-reservation>
