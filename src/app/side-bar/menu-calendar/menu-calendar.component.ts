@@ -15,6 +15,5 @@ export class MenuCalendarComponent implements OnInit {
   }
   ngOnInit(): void {
     this.monthCalendarService.generateMonth();
-    console.log(this.monthCalendarService.month);
   }
 }
