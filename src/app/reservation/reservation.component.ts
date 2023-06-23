@@ -15,25 +15,22 @@ export class ReservationComponent {
   constructor(private userService:UserService){
   }
 
+  @Input()
+  id!:string;
+
   @Output()
   cancelEvent = new EventEmitter();
 
-  @Input()
-  currentId!: string;
+  @Output()
+  confirmEvent = new EventEmitter();
 
-  cancel() {
-  this.cancelEvent.emit();
+  confirm(form:any){
+    this.confirmEvent.emit(form.value)
+    this.dismiss()
   }
 
-  createRdv(form: NgForm) {
-    this.cancel();
-    this.userService.currentUser.rdv.push(form.value)
-    console.log(this.userService.currentUser.rdv)
-    this.displayRdv()
-  }
-
-  displayRdv(){
-    
+  dismiss(){
+    this.cancelEvent.emit();
   }
 
 }

@@ -15,7 +15,7 @@ export class CalendarComponent implements OnInit {
   currentId!: string;
   userService1!: UserService;
   id!: string;
-
+  modalVisible: boolean=false;
   constructor(
     monthCalendarService: MonthCalendarService,
     userService: UserService
@@ -26,15 +26,5 @@ export class CalendarComponent implements OnInit {
   ngOnInit(): void {
     this.monthCalendarService.generateMonth();
     console.log(this.monthCalendarService.month);
-  }
-  createRDV(event: any) {
-    let modal = document.getElementById('myModal');
-    if (modal) modal.style.display = 'block';
-    this.currentId = event.target.id;
-  }
-
-  dismiss() {
-    let modal = document.getElementById('myModal');
-    if (modal) modal.style.display = 'none';
   }
 }
