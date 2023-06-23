@@ -1,0 +1,7 @@
+<div class="allComponent" (click)="displayModal()">
+    {{id.split("-")[0]}}
+    <span *ngFor="let rdv of rdvOfDay" class="rdv">{{rdv.name}}</span>
+</div>
+
+<app-reservation [id]=id class="modal" *ngIf="modalVisible" (cancelEvent)="deleteModal()"
+    (confirmEvent)="addRdv($event)"></app-reservation>
