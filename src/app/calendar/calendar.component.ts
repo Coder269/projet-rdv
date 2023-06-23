@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input } from '@angular/core';
 import { MonthCalendarService } from '../services/month-calendar.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-calendar',
@@ -11,17 +12,24 @@ export class CalendarComponent implements OnInit {
   nextMonth: any;
   month: any;
   prevMonth: any;
-  constructor(monthCalendarService: MonthCalendarService) {
-    this.monthCalendarService = monthCalendarService;
+  currentId!: string;
+  userService1!: UserService;
+  id!:string;
+
+
+  constructor(monthCalendarService: MonthCalendarService, userService:UserService) {
+    this.monthCalendarService = monthCalendarService; 
+    this.userService1 = userService
   }
   ngOnInit(): void {
     this.monthCalendarService.generateMonth();
     console.log(this.monthCalendarService.month);
   }
-  createRDV(){
+  createRDV(event:any){
     let modal = document.getElementById("myModal");
     if (modal)
     modal.style.display = "block";
+    this.currentId=event.target.id;
   }
 
   dismiss() {

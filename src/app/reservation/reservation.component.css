@@ -2,17 +2,21 @@
   display: flex;
   justify-content: center;
 }
+
 .btn button {
   margin-right: 20px;
 }
 
 .modal-content {
-  background-color:burlywood;
-  margin: 5% auto; /* 15% from the top and centered */
+  background-color: burlywood;
+  margin: 5% auto;
+  /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 50%;
+  /* Could be more or less, depending on screen size */
 }
+
 .button-3 {
   appearance: none;
   background-color: #2ea44f;
@@ -23,7 +27,7 @@
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
@@ -139,3 +143,6 @@
   margin-bottom: 15px;
 }
 
+.notEditable {
+  color: gray
+}
